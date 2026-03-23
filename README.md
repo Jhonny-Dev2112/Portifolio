@@ -59,8 +59,6 @@ Para contato profissional, utilize os meios disponibilizados diretamente na seç
 Jhonatan Fernandes Santana  
 📧 jhonny.dev2112@gmail.com  
 🔗 [LinkedIn](https://www.linkedin.com)  
-🔗 [GitHub](https://github.com/Jhonny-Dev2112)
-
 ---
 
 ## 📈 Próximas melhorias
