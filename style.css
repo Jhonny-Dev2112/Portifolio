@@ -1,0 +1,629 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  background-image: url("Imagens/DarkFundo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: 'Montserrat', 'Inter', 'Manrope', 'Heebo', sans-serif;
+}
+
+h1 {
+  line-height: 1.2;
+  font-weight: 400;
+  font-size: 200px;
+  font-family: 'Anton', sans-serif;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+/* GRID PRINCIPAL */
+
+.layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    "header foto"
+    "section foto";
+  gap: 20px;
+  padding: 20px 60px;
+}
+
+/* ÁREAS */
+
+.header {
+  grid-area: header;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.section {
+  grid-area: section;
+}
+
+.section p {
+  font-size: 22px;
+}
+
+.foto {
+  grid-area: foto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  align-self: start;
+  padding-top: 20px;
+}
+
+.foto img {
+  width: 100%;
+  height: auto;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+/* MENU */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 200px;
+}
+
+.logo {
+  padding: 30px;
+}
+
+.menu {
+  display: flex;
+  gap: 50px;
+  flex: 1;
+  justify-content: center;
+  list-style: none;
+  font-size: 30px;
+}
+
+.menu li {
+  position: relative;
+  cursor: pointer;
+}
+
+.menu li.ativo,
+.menu li:hover {
+  font-weight: 700;
+}
+
+.menu li::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.menu li:hover::after,
+.menu li.ativo::after {
+  width: 100%;
+  left: 0;
+}
+
+.tema {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.tema span {
+  position: relative;
+}
+
+.tema span::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.tema:hover span::after {
+  width: 100%;
+  left: 0;
+}
+
+.btn-tema {
+  width: 200px;
+  height: 50px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* FORMAÇÃO */
+
+.pagina-formacao .layout {
+  grid-template-rows: 0.3fr 1.7fr;
+}
+
+.pagina-formacao .header {
+  justify-content: flex-start;
+}
+
+.pagina-formacao h1 {
+  line-height: 1.5;
+  font-size: 100px;
+}
+
+.formacao-blocos {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.formacao-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.seta-formacao {
+  width: 32px;
+  height: 32px;
+  margin-top: 8px;
+  object-fit: contain;
+}
+
+.formacao-texto {
+  display: flex;
+  flex-direction: column;
+}
+
+.formacao-texto h2 {
+  margin-bottom: 8px;
+}
+
+.formacao-texto h3 {
+  line-height: 1.5;
+}
+
+.formacao-pagina-dois {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.formacao-item-dois h4 {
+  margin-bottom: 4px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.formacao-item-dois h5 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* PORTFÓLIO */
+
+.pagina-portfolio .layout {
+  grid-template-rows: 0.2fr 1.8fr;
+  gap: 20px;
+}
+
+.pagina-portfolio .header {
+  justify-content: flex-start;
+}
+
+.pagina-portfolio .header h1 {
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.pagina-portfolio .header h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+.pagina-portfolio .header h1 a:hover {
+  text-decoration: underline;
+}
+
+.portfolio-bloco {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.portfolio-img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border: 3px solid white;
+}
+
+.portfolio-img2 {
+  width: 100%;
+  max-width: 660px;
+  height: auto;
+  border: 3px solid white;
+}
+
+.portfolio-texto h2 {
+  margin-bottom: 8px;
+}
+
+.portfolio-texto h3 {
+  font-size: 21px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* CONTATO */
+
+.contato-blocos {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+}
+
+.contato-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: fit-content;
+  padding: 10px 15px;
+  border: 2px solid white;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+}
+
+.contato-item:hover {
+  text-decoration: underline;
+}
+
+.contato-item img {
+  width: 45px;
+}
+
+.contato-item span {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.pagina-contato .header {
+  display: none;
+}
+
+.pagina-contato .layout {
+  grid-template-areas: "section foto";
+}
+
+.pagina-contato .section {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 80px;
+}
+
+.contato-formulario-area {
+  width: 100%;
+  max-width: 700px;
+}
+
+.contato-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campo-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.campo-formulario label {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.campo-formulario input,
+.campo-formulario textarea {
+  padding: 14px 16px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+}
+
+.btn-enviar {
+  width: fit-content;
+  padding: 12px 24px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background: transparent;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+
+.retorno-formulario {
+  min-height: 24px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 50px;
+  padding: 0 60px;
+  visibility: hidden;
+}
+
+.pagina-formacao .footer,
+.pagina-portfolio .footer,
+.pagina-contato .footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0 60px;
+  visibility: visible;
+}
+
+#btnSeguinte {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: 'Montserrat', 'Inter', 'Manrope', 'Heebo', sans-serif;
+  cursor: pointer;
+  position: relative;
+}
+
+#btnSeguinte:hover {
+  font-weight: 700;
+}
+
+#btnSeguinte::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+#btnSeguinte:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.seta-btn {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* TEMA LIGHT */
+
+body.light {
+  background-image: url("Imagens/LightFundo.jpg");
+  color: black;
+}
+
+.light .menu li {
+  color: black;
+}
+
+.light .header h1 {
+  -webkit-text-stroke: 1px #ffffff;
+}
+
+.light .menu li::after {
+  background: black;
+}
+
+.light .tema span::after {
+  background: black;
+}
+
+.light .contato-item {
+  border-color: black;
+  color: black;
+}
+
+.light .foto img {
+  border-color: black;
+}
+
+.light .portfolio-img,
+.light .portfolio-img2 {
+  border-color: black;
+}
+
+.light .pagina-portfolio .header h1 a,
+.light.pagina-portfolio .header h1 a {
+  color: black;
+}
+
+.light #btnSeguinte {
+  color: black;
+}
+
+.light #btnSeguinte::after {
+  background: black;
+}
+
+.light.pagina-portfolio .header h1 a:hover {
+  text-decoration-color: black;
+}
+
+.light .campo-formulario input,
+.light .campo-formulario textarea,
+.light .btn-enviar {
+  border-color: black;
+  color: black;
+}
+
+.light .campo-formulario input::placeholder,
+.light .campo-formulario textarea::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "foto"
+      "header"
+      "section";
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .foto {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .foto img {
+    width: 70%;
+    max-width: 280px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .header,
+  .section {
+    text-align: center;
+  }
+
+  .header {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .tema {
+    margin-top: 20px;
+  }
+
+  h1 {
+    font-size: 90px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .section p {
+    font-size: 18px;
+  }
+
+  .pagina-formacao .layout,
+  .pagina-portfolio .layout {
+    grid-template-rows: auto auto auto;
+  }
+
+  .pagina-formacao .header,
+  .pagina-portfolio .header {
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+
+  .pagina-formacao .header h1,
+  .pagina-portfolio .header h1 {
+    margin: 0;
+    line-height: 1;
+  }
+
+  .formacao-blocos {
+    align-items: center;
+  }
+
+  .formacao-item {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .formacao-texto {
+    width: 100%;
+  }
+
+  .pagina-contato .section {
+    display: flex;
+    justify-content: center;
+  }
+
+  .contato-blocos {
+    width: 100%;
+    align-items: center;
+  }
+
+  .contato-item {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .contato-item span {
+    font-size: 22px;
+  }
+
+  .pagina-contato .layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "foto"
+      "section";
+    grid-template-rows: auto auto;
+  }
+}
