@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfólio</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- fontes utilizadas no layout -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+  <!-- ícone da aba -->
+  <link rel="icon" href="Imagens/favicon.ico">
+</head>
+<body>
+
+  <!-- barra de navegação principal -->
+  <nav class="nav">
+    <img src="Imagens/JFSbranco200x200px.png" class="logo" alt="Logo JFS">
+
+    <!-- menu de navegação entre seções -->
+    <ul class="menu" id="menu">
+      <li data-page="sobre" class="ativo">Sobre mim</li>
+      <li data-page="formacao">Formação</li>
+      <li data-page="portfolio">Portfólio</li>
+      <li data-page="contato">Contato</li>
+    </ul>
+
+    <!-- botão de alternância de tema -->
+    <div class="tema">
+      <span>Tema</span>
+      <img src="Imagens/temaDark.png" class="btn-tema" alt="Alterar tema">
+    </div>
+  </nav>
+
+  <!-- área principal controlada via JavaScript -->
+  <main class="layout">
+    <header class="header" id="header">
+      <h1>Olá!</h1>
+      <h2>MEU NOME É JHONATAN FERNANDES SANTANA</h2>
+    </header>
+
+    <section class="section" id="section">
+      <p>
+        Sou estudante de Análise e Desenvolvimento de Sistemas na Uninter, com experiência de
+        trabalho em atendimento, sistemas internos e design gráfico.
+      </p>
+    </section>
+
+    <!-- imagem fixa lateral -->
+    <figure class="foto">
+      <img src="Imagens/FotoPerfil.jpg" alt="Foto de Jhonatan">
+    </figure>
+  </main>
+
+  <!-- navegação interna das páginas -->
+  <footer class="footer">
+    <button id="btnSeguinte">Seguinte</button>
+  </footer>
+  
+  <script src="script.js"></script>
+
+</body>
+</html>
