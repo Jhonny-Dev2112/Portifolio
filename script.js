@@ -386,4 +386,8 @@ btnTema.addEventListener("click", () => {
   if (body.classList.contains("pagina-portfolio")) {
     atualizarPortfolio();
   }
+
+  if (body.classList.contains("pagina-contato")) {
+    atualizarContato();
+  }
 });
