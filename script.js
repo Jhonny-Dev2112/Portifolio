@@ -6,6 +6,9 @@ const body = document.body;
 const btn = document.getElementById("btnSeguinte");
 const btnTema = document.querySelector(".btn-tema");
 const logo = document.querySelector(".logo");
+const menuToggle = document.getElementById("menu-toggle");
+const menuMobileBox = document.getElementById("menu-mobile-box");
+
 
 let paginaFormacao = 1;
 let paginaPortfolio = 1;
@@ -390,4 +393,35 @@ btnTema.addEventListener("click", () => {
   if (body.classList.contains("pagina-contato")) {
     atualizarContato();
   }
+
+  if (window.innerWidth <= 768) {
+    atualizarTemaMenu();
+  }
 });
+
+function atualizarTemaMenu() {
+  const temaClaroAtivo = body.classList.contains("light");
+
+  if (temaClaroAtivo) {
+    menuMobileBox.classList.add("tema-claro");
+    menuMobileBox.classList.remove("tema-escuro");
+  } else {
+    menuMobileBox.classList.add("tema-escuro");
+    menuMobileBox.classList.remove("tema-claro");
+  }
+}
+
+menuToggle.addEventListener("click", () => {
+  menuMobileBox.classList.toggle("ativo");
+  atualizarTemaMenu();
+});
+
+function resetarMenuDesktop() {
+  if (window.innerWidth > 768) {
+    menuMobileBox.classList.remove("ativo");
+    menuMobileBox.classList.remove("tema-claro");
+    menuMobileBox.classList.remove("tema-escuro");
+  }
+}
+
+window.addEventListener("resize", resetarMenuDesktop);

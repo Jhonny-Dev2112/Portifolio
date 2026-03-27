@@ -17,9 +17,13 @@
 
   <!-- barra de navegação principal -->
   <nav class="nav">
-    <img src="Imagens/JFSbranco200x200px.png" class="logo" alt="Logo JFS">
+  <img src="Imagens/JFSbranco200x200px.png" class="logo" alt="Logo JFS">
 
-    <!-- menu de navegação entre seções -->
+  <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+    ☰
+  </button>
+
+  <div class="menu-mobile-box" id="menu-mobile-box">
     <ul class="menu" id="menu">
       <li data-page="sobre" class="ativo">Sobre mim</li>
       <li data-page="formacao">Formação</li>
@@ -27,11 +31,11 @@
       <li data-page="contato">Contato</li>
     </ul>
 
-    <!-- botão de alternância de tema -->
     <div class="tema">
       <span>Tema</span>
       <img src="Imagens/temaDark.png" class="btn-tema" alt="Alterar tema">
     </div>
+  </div>
   </nav>
 
   <!-- área principal controlada via JavaScript -->

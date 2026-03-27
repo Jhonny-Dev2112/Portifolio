@@ -1,3 +1,55 @@
+/* ===== DEBUG VISUAL ===== */
+
+/*.nav {
+  border: 3px solid red;
+  background-color: rgba(255, 0, 0, 0.08);
+}
+
+.logo {
+  border: 3px solid orange;
+  background-color: rgba(255, 165, 0, 0.12);
+}
+
+.menu-mobile-box {
+  border: 3px solid lime;
+  background-color: rgba(0, 255, 0, 0.08);
+}
+
+.menu {
+  border: 3px solid cyan;
+  background-color: rgba(0, 255, 255, 0.08);
+}
+
+.menu li {
+  border: 2px solid yellow;
+  background-color: rgba(255, 255, 0, 0.08);
+}
+
+.tema {
+  border: 3px solid magenta;
+  background-color: rgba(255, 0, 255, 0.08);
+}
+
+.layout {
+  border: 3px solid blue;
+  background-color: rgba(0, 0, 255, 0.05);
+}
+
+.header {
+  border: 3px solid white;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.section {
+  border: 3px solid #00ff88;
+  background-color: rgba(0, 255, 136, 0.05);
+}
+
+.foto {
+  border: 3px solid #ff8800;
+  background-color: rgba(255, 136, 0, 0.05);
+}
+*/
 * {
   margin: 0;
   padding: 0;
@@ -77,10 +129,12 @@ h2 {
 
 .nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   height: 200px;
+  padding: 0 30px;
 }
+
 
 .logo {
   padding: 30px;
@@ -89,7 +143,6 @@ h2 {
 .menu {
   display: flex;
   gap: 50px;
-  flex: 1;
   justify-content: center;
   list-style: none;
   font-size: 30px;
@@ -507,9 +560,122 @@ body.light {
   color: rgba(0, 0, 0, 0.7);
 }
 
+/* MENU MOBILE */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 34px;
+  cursor: pointer;
+}
+
+.light .menu-toggle {
+  color: black;
+}
+
+.menu-mobile-box {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-mobile-box {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-mobile-box.tema-escuro {
+  background-color: #111;
+  color: white;
+}
+
+.menu-mobile-box.tema-escuro .menu li,
+.menu-mobile-box.tema-escuro .tema span {
+  color: white;
+}
+
+.menu-mobile-box.tema-escuro .tema {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu-mobile-box.tema-claro {
+  background-color: white;
+  color: black;
+}
+
+.menu-mobile-box.tema-claro .menu li,
+.menu-mobile-box.tema-claro .tema span {
+  color: black;
+}
+
+.menu-mobile-box.tema-claro .tema {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
 /* RESPONSIVIDADE */
 
 @media (max-width: 768px) {
+
+  body {
+  overflow-x: hidden;
+  }
+
+  .nav {
+    position: relative;
+    height: auto;
+    padding: 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-mobile-box {
+    display: none;
+  }
+
+  .menu-mobile-box.ativo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  width: 240px;
+  padding: 20px;
+  border-radius: 12px;
+  z-index: 999;
+}
+
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    font-size: 24px;
+  }
+
+  .tema {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+    margin-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  .tema span {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
   .layout {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -540,22 +706,6 @@ body.light {
   .header {
     align-items: center;
     justify-content: center;
-  }
-
-  .nav {
-    flex-direction: column;
-    height: auto;
-    gap: 10px;
-  }
-
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .tema {
-    margin-top: 20px;
   }
 
   h1 {
@@ -606,18 +756,20 @@ body.light {
   }
 
   .contato-blocos {
-    width: 100%;
-    align-items: center;
-  }
+  width: 100%;
+  align-items: center;
+}
 
   .contato-item {
-    width: 100%;
-    max-width: 100%;
-  }
+  width: 100%;
+  max-width: 100%;
+}
 
   .contato-item span {
-    font-size: 22px;
-  }
+  font-size: 22px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
 
   .pagina-contato .layout {
     grid-template-columns: 1fr;
@@ -626,4 +778,5 @@ body.light {
       "section";
     grid-template-rows: auto auto;
   }
+  
 }
