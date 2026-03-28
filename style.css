@@ -650,6 +650,10 @@ body.light .footer button {
   background: none;
 }
 
+body.light {
+  background-color: #ffffff;
+}
+
 /* ==================================================
    MENU MOBILE
    - Botão hambúrguer
@@ -726,6 +730,10 @@ body.light .footer button {
     overflow-x: hidden;
   }
 
+  body.dark {
+    background-color: #0f0f0f;
+  }
+
   .nav {
     position: relative;
     height: 250px;
@@ -736,17 +744,24 @@ body.light .footer button {
   }
 
   .logo {
-    order: 2;
-    margin-left: auto;
-    margin-right: 30px;
+    text-align: center;
+    margin: 0 auto;
+    width: 300px;
+    transform: translateX(-10px);
   }
 
   .menu-toggle {
-    font-size: 70px;
-    order: 1;
-    display: block;
-    margin-right: 0px;
-    margin-left: 80px;
+    position: absolute;
+    left: 16px;
+    top: 20%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .menu-mobile-box {
@@ -757,14 +772,15 @@ body.light .footer button {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 25px;
+    gap: 20px;
     position: absolute;
-    top: 70%;
+    top: 30%;
     left: 20px;
     right: auto;
     width: 240px;
-    padding: 20px;
+    padding: 5px 20px 20px 20px;
     border-radius: 12px;
+    box-sizing: border-box;
     z-index: 999;
   }
 
@@ -772,7 +788,7 @@ body.light .footer button {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 20px;
+    gap: 10px;
     font-size: 24px;
   }
 
@@ -815,7 +831,7 @@ body.light .footer button {
   .foto {
     justify-content: center;
     align-items: center;
-    margin-top: -10px;
+    margin-top: -20px;
   }
 
   .foto img {
@@ -837,16 +853,20 @@ body.light .footer button {
 
   h1 {
     margin-top: -50px;
-    font-size: 90px;
+    font-size: 120px;
     padding: 10px;
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .pagina-formacao h1{
     font-size: 80px;
+  }
+
+  .pagina-formacao .section h2{
+    font-size: 25px;
   }
 
   .pagina-portfolio .header h1{
@@ -942,4 +962,8 @@ body.light .footer button {
     margin-top: 20px;
   }
   
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
 }
