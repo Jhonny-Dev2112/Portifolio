@@ -1,4 +1,8 @@
-/* ===== DEBUG VISUAL ===== */
+/* ==================================================
+   DEBUG VISUAL
+   - Bordas e fundos temporários para enxergar blocos
+   - Pode remover depois, se quiser
+================================================== */
 
 /*.nav {
   border: 3px solid red;
@@ -50,11 +54,25 @@
   background-color: rgba(255, 136, 0, 0.05);
 }
 */
+
+/* ==================================================
+   RESET GERAL
+   - Remove margens padrão
+   - Ajusta cálculo de largura/altura
+================================================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+
+/* ==================================================
+   BODY
+   - Estrutura principal da página
+   - Fundo, fonte e organização geral
+================================================== */
 
 body {
   display: grid;
@@ -62,11 +80,18 @@ body {
   min-height: 100vh;
   background-image: url("Imagens/DarkFundo.jpg");
   background-size: cover;
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   color: white;
   font-family: 'Montserrat', 'Inter', 'Manrope', 'Heebo', sans-serif;
 }
+
+
+/* ==================================================
+   TIPOGRAFIA GERAL
+   - Títulos principais do site
+================================================== */
 
 h1 {
   line-height: 1.2;
@@ -79,7 +104,11 @@ h2 {
   font-size: 40px;
 }
 
-/* GRID PRINCIPAL */
+
+/* ==================================================
+   GRID PRINCIPAL
+   - Layout base com conteúdo à esquerda e foto à direita
+================================================== */
 
 .layout {
   display: grid;
@@ -91,7 +120,13 @@ h2 {
   padding: 20px 60px;
 }
 
-/* ÁREAS */
+
+/* ==================================================
+   ÁREAS PRINCIPAIS DO LAYOUT
+   - header
+   - section
+   - foto
+================================================== */
 
 .header {
   grid-area: header;
@@ -109,6 +144,7 @@ h2 {
   font-size: 22px;
 }
 
+
 .foto {
   grid-area: foto;
   display: flex;
@@ -125,7 +161,14 @@ h2 {
   border-radius: 10px;
 }
 
-/* MENU */
+
+/* ==================================================
+   MENU / NAVEGAÇÃO
+   - Barra superior
+   - Logo
+   - Menu principal
+   - Efeito ativo/hover
+================================================== */
 
 .nav {
   display: flex;
@@ -134,7 +177,6 @@ h2 {
   height: 200px;
   padding: 0 30px;
 }
-
 
 .logo {
   padding: 30px;
@@ -149,6 +191,7 @@ h2 {
 }
 
 .menu li {
+  padding-top: 42px;
   position: relative;
   cursor: pointer;
 }
@@ -174,6 +217,14 @@ h2 {
   width: 100%;
   left: 0;
 }
+
+
+/* ==================================================
+   ÁREA DO TEMA
+   - Texto "Tema"
+   - Botão visual do tema
+   - Linha animada ao passar o mouse
+================================================== */
 
 .tema {
   display: flex;
@@ -211,7 +262,11 @@ h2 {
   cursor: pointer;
 }
 
-/* FORMAÇÃO */
+
+/* ==================================================
+   PÁGINA DE FORMAÇÃO
+   - Ajustes específicos quando o body tiver a classe
+================================================== */
 
 .pagina-formacao .layout {
   grid-template-rows: 0.3fr 1.7fr;
@@ -276,7 +331,12 @@ h2 {
   font-weight: 700;
 }
 
-/* PORTFÓLIO */
+
+/* ==================================================
+   PÁGINA DE PORTFÓLIO
+   - Ajustes específicos da página
+   - Imagens e textos dos projetos
+================================================== */
 
 .pagina-portfolio .layout {
   grid-template-rows: 0.2fr 1.8fr;
@@ -332,7 +392,13 @@ h2 {
   font-weight: 500;
 }
 
-/* CONTATO */
+
+/* ==================================================
+   PÁGINA DE CONTATO
+   - Links de contato
+   - Formulário
+   - Ajustes da página contato
+================================================== */
 
 .contato-blocos {
   display: flex;
@@ -426,13 +492,16 @@ h2 {
   cursor: pointer;
 }
 
-.retorno-formulario {
-  min-height: 24px;
-  font-size: 18px;
-  font-weight: 600;
+.pagina-contato .aviso-formulario{
+  font-size: 15px;
 }
 
-/* FOOTER */
+/* ==================================================
+   FOOTER
+   - Botão de navegação entre páginas
+   - Seta
+   - Visibilidade por página
+================================================== */
 
 .footer {
   display: flex;
@@ -488,12 +557,6 @@ h2 {
   left: 0;
 }
 
-.seta-btn {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-}
-
 .footer button {
   background: none;
   border: none;
@@ -501,15 +564,26 @@ h2 {
   cursor: pointer;
 }
 
-.footer button img {
+.seta-btn-texto {
+  display: inline-block;
+  font-size: 28px;
+  line-height: 1;
   background: transparent;
-  display: block;
 }
 
-/* TEMA LIGHT */
+.voltar {
+  transform: rotate(180deg);
+}
+
+
+/* ==================================================
+   TEMA LIGHT
+   - Troca cores e detalhes no tema claro
+================================================== */
 
 body.light {
   background-image: url("Imagens/LightFundo.jpg");
+  background-attachment: fixed;
   color: black;
 }
 
@@ -576,11 +650,12 @@ body.light .footer button {
   background: none;
 }
 
-body.light .footer button img {
-  background: transparent;
-}
-
-/* MENU MOBILE */
+/* ==================================================
+   MENU MOBILE
+   - Botão hambúrguer
+   - Caixa do menu mobile
+   - Variação visual para tema escuro/claro
+================================================== */
 
 .menu-toggle {
   display: none;
@@ -611,6 +686,7 @@ body.light .footer button img {
 
 .menu-mobile-box.tema-escuro {
   background-color: #111;
+  border: 1px solid white;
   color: white;
 }
 
@@ -625,6 +701,7 @@ body.light .footer button img {
 
 .menu-mobile-box.tema-claro {
   background-color: white;
+  border: 1px solid black;
   color: black;
 }
 
@@ -637,30 +714,39 @@ body.light .footer button img {
   border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-/* RESPONSIVIDADE */
+
+/* ==================================================
+   RESPONSIVIDADE
+   - Ajustes para telas menores
+================================================== */
 
 @media (max-width: 768px) {
 
   body {
-  overflow-x: hidden;
+    overflow-x: hidden;
   }
 
   .nav {
-  position: relative;
-  height: auto;
-  padding: 15px 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    position: relative;
+    height: 250px;
+    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .logo {
-  margin-left: 5px;
+    order: 2;
+    margin-left: auto;
+    margin-right: 30px;
   }
 
   .menu-toggle {
+    font-size: 70px;
+    order: 1;
     display: block;
-    margin-right: 70px;
+    margin-right: 0px;
+    margin-left: 80px;
   }
 
   .menu-mobile-box {
@@ -668,17 +754,18 @@ body.light .footer button img {
   }
 
   .menu-mobile-box.ativo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 25px;
-  position: absolute;
-  top: 100%;
-  right: 20px;
-  width: 240px;
-  padding: 20px;
-  border-radius: 12px;
-  z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    position: absolute;
+    top: 70%;
+    left: 20px;
+    right: auto;
+    width: 240px;
+    padding: 20px;
+    border-radius: 12px;
+    z-index: 999;
   }
 
   .menu {
@@ -707,21 +794,33 @@ body.light .footer button img {
   .layout {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "foto"
       "header"
+      "foto"
       "section";
     gap: 20px;
     padding: 20px;
   }
 
+  .pagina-formacao .layout,
+  .pagina-portfolio .layout,
+  .pagina-contato .layout {
+    grid-template-areas:
+      "foto"
+      "header"
+      "section";
+    padding-top: 0;
+
+  }
+
   .foto {
     justify-content: center;
     align-items: center;
+    margin-top: -10px;
   }
 
   .foto img {
-    width: 70%;
-    max-width: 280px;
+    width: 90%;
+    max-width: 350px;
     margin: 0 auto;
     display: block;
   }
@@ -737,11 +836,21 @@ body.light .footer button img {
   }
 
   h1 {
+    margin-top: -50px;
     font-size: 90px;
+    padding: 10px;
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 20px;
+  }
+
+  .pagina-formacao h1{
+    font-size: 80px;
+  }
+
+  .pagina-portfolio .header h1{
+    font-size: 40px;
   }
 
   .section p {
@@ -780,24 +889,38 @@ body.light .footer button img {
 
   .pagina-contato .section {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+  }
+
+  .pagina-contato .campo-formulario label,
+  .pagina-contato .retorno-formulario {
+    text-align: left;
+  }
+
+  .pagina-contato .section .aviso-formulario {
+    font-size: 15px;
+  }
+
+  .pagina-contato .contato-formulario p {
+    margin-top: -30px;
   }
 
   .contato-blocos {
-  width: 100%;
-  align-items: center;
-}
+    width: 100%;
+    align-items: center;
+  }
 
   .contato-item {
-  width: 100%;
-  max-width: 100%;
-}
+    width: 100%;
+    max-width: 100%;
+  }
 
   .contato-item span {
-  font-size: 22px;
-  word-break: break-word;
-  overflow-wrap: anywhere;
-}
+    font-size: 22px;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
 
   .pagina-contato .layout {
     grid-template-columns: 1fr;
@@ -807,5 +930,16 @@ body.light .footer button img {
     grid-template-rows: auto auto;
   }
   
-}
+  .pagina-formacao .section {
+    text-align: left;
+  }
 
+  .formacao-blocos {
+  gap: 20px; 
+  }
+
+  .footer {
+    margin-top: 20px;
+  }
+  
+}

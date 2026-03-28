@@ -1,67 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Configurações básicas da página -->
   <meta charset="UTF-8">
-  <title>Portfólio</title>
-  <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio</title>
 
-  <!-- fontes utilizadas no layout -->
+  <!-- Arquivo principal de estilos -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fontes usadas no layout -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
-  <!-- ícone da aba -->
+  <!-- Ícone da aba do navegador -->
   <link rel="icon" href="Imagens/favicon.ico">
 </head>
 <body>
 
-  <!-- barra de navegação principal -->
+  <!-- ==================================================
+       NAVEGAÇÃO PRINCIPAL
+       - Logo
+       - Botão do menu mobile
+       - Lista de páginas
+       - Botão de troca de tema
+     ================================================== -->
+     
   <nav class="nav">
-  <img src="Imagens/JFSbranco200x200px.png" class="logo" alt="Logo JFS">
 
-  <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
-    ☰
-  </button>
+    <!-- Logo da marca -->
+    <img src="Imagens/JFSbranco200x200px.png" class="logo" alt="Logo JFS">
 
-  <div class="menu-mobile-box" id="menu-mobile-box">
-    <ul class="menu" id="menu">
-      <li data-page="sobre" class="ativo">Sobre mim</li>
-      <li data-page="formacao">Formação</li>
-      <li data-page="portfolio">Portfólio</li>
-      <li data-page="contato">Contato</li>
-    </ul>
+    <!-- Botão que será usado no menu mobile -->
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+      ☰
+    </button>
 
-    <div class="tema">
-      <span>Tema</span>
-      <img src="Imagens/temaDark.png" class="btn-tema" alt="Alterar tema">
+    <!-- Caixa que agrupa menu + botão de tema -->
+    <div class="menu-mobile-box" id="menu-mobile-box">
+
+      <!-- Menu principal de navegação -->
+      <ul class="menu" id="menu">
+        <li data-page="sobre" class="ativo">Sobre mim</li>
+        <li data-page="formacao">Formação</li>
+        <li data-page="portfolio">Portfólio</li>
+        <li data-page="contato">Contato</li>
+      </ul>
+
+      <!-- Área de troca de tema -->
+      <div class="tema">
+        <span>Tema</span>
+        <img src="Imagens/temaDark.png" class="btn-tema" alt="Alterar tema">
+      </div>
+
     </div>
-  </div>
   </nav>
 
-  <!-- área principal controlada via JavaScript -->
+  <!-- ==================================================
+       CONTEÚDO PRINCIPAL
+       - Cabeçalho com apresentação
+       - Seção com texto
+       - Foto lateral
+     ================================================== -->
   <main class="layout">
+
+    <!-- Cabeçalho principal da página -->
     <header class="header" id="header">
       <h1>Olá!</h1>
       <h2>MEU NOME É JHONATAN FERNANDES SANTANA</h2>
     </header>
 
+    <!-- Área de conteúdo que será alterada via JavaScript -->
     <section class="section" id="section">
       <p>
         Sou estudante de Análise e Desenvolvimento de Sistemas na Uninter, com experiência de trabalho em atendimento, sistemas internos e design gráfico. Possuo MEI e atuo com a JFS Design na prestação de serviços. Busco evolução constante, principalmente em tecnologia, comunicação e trabalho em equipe.
       </p>
     </section>
 
-    <!-- imagem fixa lateral -->
+    <!-- Imagem lateral fixa do layout -->
     <figure class="foto">
       <img src="Imagens/FotoPerfil.jpg" alt="Foto de Jhonatan">
     </figure>
+
   </main>
 
-  <!-- navegação interna das páginas -->
+  <!-- ==================================================
+       RODAPÉ
+       - Botão de navegação interna entre páginas
+     ================================================== -->
   <footer class="footer">
     <button id="btnSeguinte">Seguinte</button>
   </footer>
-  
+
+  <!-- Arquivo JavaScript da página -->
   <script src="script.js"></script>
 
 </body>

@@ -148,7 +148,7 @@ function atualizarFormacao() {
 
     btn.innerHTML = `
       <span>Seguinte</span>
-      <img src="${getSetaTema()}" class="seta-btn" alt="Seta">
+      <span class="seta-btn-texto">❯</span>
     `;
   }
 
@@ -187,7 +187,7 @@ function atualizarFormacao() {
     `;
 
     btn.innerHTML = `
-      <img src="${getSetaTema()}" class="seta-btn" style="transform: rotate(180deg);" alt="Seta">
+      <span class="seta-btn-texto voltar">❯</span>
       <span>Voltar</span>
     `;
   }
@@ -217,7 +217,7 @@ function atualizarPortfolio() {
 
     btn.innerHTML = `
       <span>Seguinte</span>
-      <img src="${getSetaTema()}" class="seta-btn" alt="Seta">
+      <span class="seta-btn-texto">❯</span>
     `;
   }
 
@@ -243,7 +243,7 @@ function atualizarPortfolio() {
     `;
 
     btn.innerHTML = `
-      <img src="${getSetaTema()}" class="seta-btn" style="transform: rotate(180deg);" alt="Seta">
+      <span class="seta-btn-texto voltar">❯</span>
       <span>Voltar</span>
     `;
   }
@@ -285,7 +285,7 @@ function atualizarContato() {
 
     btn.innerHTML = `
       <span>Formulário</span>
-      <img src="${getSetaTema()}" class="seta-btn" alt="Seta">
+      <span class="seta-btn-texto">❯</span>
     `;
     return;
   }
@@ -315,7 +315,7 @@ function atualizarContato() {
         <p id="retornoFormulario" class="retorno-formulario"></p>
 
         <!-- Observação importante para uso real -->
-        <p style="font-size:14px; opacity:0.7; margin-top:10px;">
+        <p style="opacity:0.7; margin-top:10px;" class="aviso-formulario">
           Este formulário possui finalidade acadêmica e não realiza envio real de mensagens.
           <br>Para contato, utilize os meios disponíveis na página anterior.
         </p>
@@ -325,7 +325,7 @@ function atualizarContato() {
   `;
 
   btn.innerHTML = `
-    <img src="${getSetaTema()}" class="seta-btn" style="transform: rotate(180deg);" alt="Seta">
+    <span class="seta-btn-texto voltar">❯</span>
     <span>Voltar</span>
   `;
 
