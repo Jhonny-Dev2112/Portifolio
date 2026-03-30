@@ -87,6 +87,17 @@ body {
   font-family: 'Montserrat', 'Inter', 'Manrope', 'Heebo', sans-serif;
 }
 
+body.dark::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("DarkFundo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
 
 /* ==================================================
    TIPOGRAFIA GERAL
@@ -96,7 +107,7 @@ body {
 h1 {
   line-height: 1.2;
   font-weight: 400;
-  font-size: 200px;
+  font-size: 180px;
   font-family: 'Anton', sans-serif;
 }
 
@@ -581,6 +592,18 @@ h2 {
    - Troca cores e detalhes no tema claro
 ================================================== */
 
+body.light::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("LightFundo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+
 body.light {
   background-image: url("Imagens/LightFundo.jpg");
   background-attachment: fixed;
@@ -726,6 +749,10 @@ body.light {
 
 @media (max-width: 768px) {
 
+  html, body {
+    overflow-x: hidden;
+  }
+
   body {
     overflow-x: hidden;
   }
@@ -852,13 +879,15 @@ body.light {
   }
 
   h1 {
-    margin-top: -50px;
-    font-size: 120px;
+    margin-top: -60px;
+    margin-bottom: -10px;
+    font-size: 100px;
     padding: 10px;
   }
 
   h2 {
-    font-size: 18px;
+    font-size: 22px;
+    margin-bottom: -10px;
   }
 
   .pagina-formacao h1{
@@ -912,7 +941,10 @@ body.light {
     justify-content: flex-start;
     padding-top: 20px;
   }
-
+  
+  .retorno-formulario{
+    padding-top: 20px;
+  }
   .pagina-contato .campo-formulario label,
   .pagina-contato .retorno-formulario {
     text-align: left;

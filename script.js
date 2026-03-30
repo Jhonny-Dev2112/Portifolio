@@ -17,7 +17,7 @@ let paginaContato = 1;
 const conteudos = {
   sobre: {
     titulo: "Olá!",
-    subtitulo: "MEU NOME É JHONATAN FERNANDES SANTANA",
+    subtitulo: "Meu nome é<br><b>Jhonatan Fernandes Santana",
     texto: " Sou estudante de Análise e Desenvolvimento de Sistemas na Uninter, com experiência de trabalho em atendimento, sistemas internos e design gráfico. Possuo MEI e atuo com a JFS Design na prestação de serviços. Busco evolução constante, principalmente em tecnologia, comunicação e trabalho em equipe."
   },
   formacao: {
