@@ -112,9 +112,8 @@ h1 {
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 30px;
 }
-
 
 /* ==================================================
    GRID PRINCIPAL
@@ -295,7 +294,7 @@ h2 {
 .formacao-blocos {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 35px;
 }
 
 .formacao-item {

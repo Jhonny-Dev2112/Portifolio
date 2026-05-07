@@ -148,7 +148,7 @@ function atualizarFormacao() {
           <img src="${body.classList.contains("light") ? "Imagens/setaPreta.png" : "Imagens/seta.png"}" class="seta-formacao" alt="Seta">
           <div class="formacao-texto">
             <h2>AWS Cloud Practitioner Essentials - Amazon AWS</h2>
-            <h3>04/2026</h3>
+            <h3>04 / 2026</h3>
           </div>
         </div>
 
