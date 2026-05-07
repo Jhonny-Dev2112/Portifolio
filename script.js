@@ -143,6 +143,15 @@ function atualizarFormacao() {
             <h3>2017 - 2018 (1000 horas)</h3>
           </div>
         </div>
+
+        <div class="formacao-item">
+          <img src="${body.classList.contains("light") ? "Imagens/setaPreta.png" : "Imagens/seta.png"}" class="seta-formacao" alt="Seta">
+          <div class="formacao-texto">
+            <h2>AWS Cloud Practitioner Essentials - Amazon AWS</h2>
+            <h3>04/2026</h3>
+          </div>
+        </div>
+
       </div>
     `;
 
