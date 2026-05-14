@@ -4,7 +4,7 @@ emailjs.init({
   blockHeadless: true,
   limitRate: {
     id: "formContato",
-    throttle: 5000
+    throttle: 10000
   }
 });
 
