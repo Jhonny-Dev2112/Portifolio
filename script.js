@@ -1,6 +1,11 @@
-// Inicializa o EmailJS
+// Inicializa o EmailJS e adiciona proteção básica contra abuso no formulário
 emailjs.init({
-  publicKey: "CZsomTcAOcaUYdh-d"
+  publicKey: "SUA_PUBLIC_KEY",
+  blockHeadless: true,
+  limitRate: {
+    id: "formContato",
+    throttle: 5000
+  }
 });
 
 /* DECLARAÇÃO DE ELEMENTOS */
