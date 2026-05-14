@@ -1,3 +1,8 @@
+// Inicializa o EmailJS
+emailjs.init({
+  publicKey: "CZsomTcAOcaUYdh-d"
+});
+
 /* DECLARAÇÃO DE ELEMENTOS */
 const itens = document.querySelectorAll(".menu li");
 const header = document.getElementById("header");
@@ -301,48 +306,46 @@ function atualizarContato() {
 
   // Página 2 → formulário acadêmico
   section.innerHTML = `
-    <div class="contato-formulario-area">
-      <form id="formContato" class="contato-formulario" novalidate>
+  <div class="contato-formulario-area">
+    <form id="formContato" class="contato-formulario" novalidate>
 
-        <div class="campo-formulario">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
-        </div>
+      <div class="campo-formulario">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="name" placeholder="Digite seu nome">
+      </div>
 
-        <div class="campo-formulario">
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
-        </div>
+      <div class="campo-formulario">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+      </div>
 
-        <div class="campo-formulario">
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows="6" placeholder="Digite sua mensagem"></textarea>
-        </div>
+      <div class="campo-formulario">
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="message" rows="6" placeholder="Digite sua mensagem"></textarea>
+      </div>
 
-        <button type="submit" class="btn-enviar">Enviar</button>
+      <button type="submit" class="btn-enviar">Enviar</button>
 
-        <p id="retornoFormulario" class="retorno-formulario"></p>
+      <p id="retornoFormulario" class="retorno-formulario"></p>
 
-        <!-- Observação importante para uso real -->
-        <p style="opacity:0.7; margin-top:10px;" class="aviso-formulario">
-          Este formulário possui finalidade acadêmica e não realiza envio real de mensagens.
-          <br>Para contato, utilize os meios disponíveis na página anterior.
-        </p>
+      <p style="opacity:0.7; margin-top:10px;" class="aviso-formulario">
+        Sua mensagem será enviada diretamente para o meu e-mail.
+      </p>
 
-      </form>
-    </div>
-  `;
+    </form>
+  </div>
+`;
 
-  btn.innerHTML = `
-    <span class="seta-btn-texto voltar">❯</span>
-    <span>Voltar</span>
-  `;
+btn.innerHTML = `
+  <span class="seta-btn-texto voltar">❯</span>
+  <span>Voltar</span>
+`;
 
-  ativarFormularioContato();
+ativarFormularioContato();
 }
 
 function validarEmail(email) {
-  // valida um formato simples de e-mail antes do envio
+  // Valida um formato simples de e-mail antes do envio
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
@@ -362,21 +365,34 @@ function ativarFormularioContato() {
     const emailValor = email.value.trim();
     const mensagemValor = mensagem.value.trim();
 
-    // verifica se todos os campos foram preenchidos
+    // Verifica se todos os campos foram preenchidos
     if (!nomeValor || !emailValor || !mensagemValor) {
       retorno.textContent = "Preencha todos os campos antes de enviar.";
       return;
     }
 
-    // confere se o e-mail digitado parece válido
+    // Confere se o e-mail digitado parece válido
     if (!validarEmail(emailValor)) {
       retorno.textContent = "Informe um e-mail válido.";
       return;
     }
 
-    // simula o envio e limpa o formulário
-    retorno.textContent = "Mensagem enviada com sucesso!";
-    form.reset();
+    // Envia os dados do formulário usando o EmailJS
+    retorno.textContent = "Enviando mensagem...";
+
+    emailjs.sendForm(
+      "service_isdc4ag",
+      "template_0l7c2jb",
+      form
+    )
+    .then(() => {
+      retorno.textContent = "Mensagem enviada com sucesso!";
+      form.reset();
+    })
+    .catch((error) => {
+      console.error("Erro ao enviar:", error);
+      retorno.textContent = "Erro ao enviar. Tente novamente.";
+    });
   });
 }
 
